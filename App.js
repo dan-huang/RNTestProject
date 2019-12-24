@@ -4,11 +4,19 @@ import ImagePicker from 'react-native-image-crop-picker';
 
 export class App extends Component {
   componentDidMount() {
-    ImagePicker.openPicker({
-      multiple: true
-    }).then(images => {
-      console.log(images);
+    ImagePicker.openCamera({
+      width: 300,
+      height: 400,
+      cropping: true,
+    }).then(image => {
+      console.log(image);
     });
+
+    // ImagePicker.openPicker({
+    //   multiple: true
+    // }).then(images => {
+    //   console.log(images);
+    // });
   }
   render() {
     return (
